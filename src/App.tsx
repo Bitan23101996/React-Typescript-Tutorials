@@ -1,6 +1,13 @@
 import React from "react";
 import "./App.css";
+import Private from "./components/Auth/Private";
+import Profile from "./components/Auth/Profile";
 import Button from "./components/Button";
+import Counter from "./components/Class/Counter";
+import Box from "./components/Context/Box";
+import { ThemeContextProvider } from "./components/Context/ThemeContext";
+import User from "./components/Context/User";
+import { UserContextProvider } from "./components/Context/UserContext";
 import CssContainer from "./components/CssContainer";
 import Greets from "./components/Greets";
 import Input from "./components/Input";
@@ -8,8 +15,10 @@ import LanguageList from "./components/LanguageList";
 import LevelOne from "./components/LevelOne";
 import LevelTwo from "./components/LevelTwo";
 import Persons from "./components/Persons";
+import MuttableRef from "./components/Ref/MuttableRef";
+// import Counter from "./components/State/Counter";
 import LoggedIn from "./components/State/LoggedIn";
-import User from "./components/State/User";
+
 import Status from "./components/Status";
 
 function App() {
@@ -53,7 +62,18 @@ function App() {
       <CssContainer styles={{ border: "2px dotted grey", padding: "1rem" }} /> */}
 
       {/* <LoggedIn /> */}
-      <User />
+      {/* <User /> */}
+      {/* <Counter/> */}
+
+      {/* <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider> */}
+      {/*  <UserContextProvider>
+        <User />
+      </UserContextProvider> */}
+      {/* <MuttableRef/> */}
+      {/* <Counter message="Hello"/> */}
+      <Private isLoggedIn={true} component={Profile} />
     </div>
   );
 }
